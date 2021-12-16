@@ -79,3 +79,29 @@
 
         -   "Code-based tests" == testing code implementation
         -   "Functional tests" == testing application behavior
+
+    -   # Testing Trade-offs
+        -   **Testing Goal #1**
+            -   **Easy maintenance of tests**
+            -   Test behavior, not implementation
+                -   Ideally, do not want to re-write tests after a code refactor
+                -   Keep in mind when writing tests
+                -   Test behavior (what the app should do) and not internal implementation (how the app works)
+                -   Then if implementation changes but behavior remains the same, the original tests still pass and are useful
+                -   Sometimes we say testing implementation is "brittle" - easily broken when the app still works
+                -   ## Example: A simple button that increases a number by 1
+                    -   Testing Behavior:
+                        -   set initial state
+                        -   simulate button click
+                        -   Check to see if number was increased by 1
+                    -   Testing Implementation:
+                        -   set initial state
+                        -   simulate button click
+                        -   Check to see if particular function was called
+                    -   **Why Brittle (easily broken)?**
+                        -   Let's say we change the increase counter by 1 function to be an anonymous inline function
+                            -   Now the behavior test still works, still increases by 1
+                            -   But the implementation test fails, because the original function was not called
+                            -   Multiply this by an entire codebase or project - it's thousands of broken tests
+        -   **Testing Goal #2**
+            -   **Easy diagnoses of failing tests**
