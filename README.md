@@ -1,5 +1,10 @@
 ## Testing Notes
 
+-   # Jest
+
+    -   **Jest Docs**
+        -   https://jestjs.io/
+
 -   # Ezyme
 
     -   **What does Enzyme do?**
@@ -11,6 +16,9 @@
         -   Differences are mostly philosophical, about the **way** you should test
 
     -   **Enzyme**
+        -   **Enzyme Docs**
+            -   https://enzymejs.github.io/enzyme/docs/api/
+            -
         -   Enzyme supports isolated testing
             -   e.g. "shallow testing" - allows you it isolate a component from its children, where it only renders the component itself and not its children
         -   React Testing Library strongly prefers **functional** testing
@@ -41,9 +49,33 @@
             -   On October 23, 2020, create-react-app updated to React 17. Since running npx create-react-app as recommended will use the latest version of create-react-app, your apps will be using React 17 as well.
 
             -   What this means
+            -   **npm install --save-dev enzyme @wojtekmaj/enzyme-adapter-react-17**
 
                 -   Unfortunately, the official enzyme-adapter-react-17 is not yet available. Until the update, the unofficial adapter is @wojtekmaj/enzyme-adapter-react-17 adapter.
 
             -   Dependency issues
 
             -   There may be some dependency issues when installing the unofficial adapter (or when making installs afterward). Running the install with the --legacy-peer-deps flag should allow the install to continue.
+
+    -   # Types of Tests
+
+        -   **Unit Tests**
+
+            -   Tests one piece of code - usually a single function
+
+        -   **Integration Tests**
+
+            -   How multiple units work together
+
+        -   **Acceptance / End-to-end (E2E) Tests**
+
+            -   Uses an actual browser and connections to servers
+                -   From browser to user to browser to server to database and back again
+                    -   Uses tools like Cypress or Selenium to simulate user browser experience
+
+        -   **Functional Tests**
+
+            -   Can be any of the above; focuses on user flow, user stories
+
+        -   "Code-based tests" == testing code implementation
+        -   "Functional tests" == testing application behavior
