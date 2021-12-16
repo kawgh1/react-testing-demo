@@ -26,4 +26,24 @@
                     -   Testing React: A Convert's journey from Enzyme to React Testing Library
                     -   https://bonniedotdev.medium.com/70f85eebb674
     -   _"Shallow Rendering"_
+
         -   Rendering components only one level deep
+        -   Render Parent, but use placeholders for children
+            -   Pros:
+                -   Faster testing
+                -   Any problems in the children components will not cause the Parent component to fail - while this makes more tests, it allows more precision of those tests
+
+    -   # Enzme-adapter-react-17 not yet available
+
+        -   IMPORTANT NOTE: enzyme-adapter-react-17 not yet available
+
+            -   Create-React-App uses React 17, but Enzyme Adapter Not Yet Available
+            -   On October 23, 2020, create-react-app updated to React 17. Since running npx create-react-app as recommended will use the latest version of create-react-app, your apps will be using React 17 as well.
+
+            -   What this means
+
+                -   Unfortunately, the official enzyme-adapter-react-17 is not yet available. Until the update, the unofficial adapter is @wojtekmaj/enzyme-adapter-react-17 adapter.
+
+            -   Dependency issues
+
+            -   There may be some dependency issues when installing the unofficial adapter (or when making installs afterward). Running the install with the --legacy-peer-deps flag should allow the install to continue.
