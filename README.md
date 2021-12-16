@@ -89,7 +89,7 @@
                 -   Test behavior (what the app should do) and not internal implementation (how the app works)
                 -   Then if implementation changes but behavior remains the same, the original tests still pass and are useful
                 -   Sometimes we say testing implementation is "brittle" - easily broken when the app still works
-                -   ### Example: A simple button that increases a number by 1
+                -   ### Example: A simple button that increases a displayed number by 1
                     -   #### Testing Behavior:
                         -   set initial state
                         -   simulate button click
@@ -105,3 +105,25 @@
                             -   Multiply this by an entire codebase or project - it's thousands of broken tests
         -   ## **Testing Goal #2**
             -   ## **Easy diagnoses of failing tests**
+                -   **Feature to test** - Shopping cart for a custom t-shirt
+                    -   User can:
+                        -   Select t-shirt style
+                        -   Select size
+                        -   Select color
+                        -   Select number of shirts to order
+                        -   Type in text to put on shirt
+                        -   etc.
+                        -   Add to cart
+                    -   **Difficult to Diagnose Test**
+                        -   Test that the cart has the correct contents after entire process
+                        -   Why difficult?
+                            -   If it fails, which step was the problem?
+                        -   Test failure alone don't tell you
+                            -   Need to investigate
+                        -   Want efficiency in diagnosing failing tests
+                -   This is a case where you would want to use **implementation testing**
+                -   Testing is an art, not a science
+                    -   Sometimes you'll optimize for ease of diagnosis
+                    -   Sometimes you'll optimize for less brittle tests
+                    -   A lot seems to depend on - how far along in the project development are we? if we know a particular function or code area will NOT change any time soon or CANNOT change due to other constraints (dependencies, stack requirements, vendors, etc.)- may opt for more code-based implementation testing
+                        -   If we know this code is still relatively new, not locked down yet and we are still very much in the exploratory phase of code and project development (ie "seeing what works" with what we have, trying different options) - then behavioral testing may be more efficient in this phase
